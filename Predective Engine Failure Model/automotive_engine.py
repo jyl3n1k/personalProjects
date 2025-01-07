@@ -1,5 +1,5 @@
 # This model predicts engine failure by classifying the engine condition using data from sensors and other diagnostic inputs. 
-# The project demonstrates the application of supervised learning to detect potential failures and prevent unexpected downtime 
+# The project demonstrates the application of supervised learning (K-Nearest-Neighbor) to detect potential failures and prevent unexpected downtime 
 # in industrial machinery
 
 

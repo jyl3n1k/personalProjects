@@ -1,3 +1,9 @@
+#This project predicts a person's salary based on their years of experience using linear regression. 
+#The dataset, which contains years of experience and corresponding salary, is split into training and 
+#test sets for model evaluation. The model is trained and tested, and its performance is measured using the R-squared score, 
+#mean absolute error (MAE), and mean absolute percentage error (MAPE). The results are visualized by plotting the data points 
+#and the regression line. The model’s accuracy and prediction equation are also displayed
+
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split

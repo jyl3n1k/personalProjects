@@ -34,13 +34,15 @@ drone.connect()
 
 drone.streamon()
 drone.takeoff()
-drone.send_rc_control(0,0,25,0)
-time.sleep(2.2)
+#drone.send_rc_control(0,0,13,0)
+#time.sleep(2.2)
+#drone.send_rc_control(0, 0, 0, 0)
 
-fbRange = [6200, 6800]
+fbRange = [4000, 120000]
 pid = [0.4, 0.4, 0]
 pError = 0
-w, h = 360, 240
+w, h = 720, 480
+
 
 def find_face(img):
     faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -92,8 +94,11 @@ while True:
     img = drone.get_frame_read().frame
     img = cv2.resize(img, (w,h))
     img, info = find_face(img)
-    pError = (drone, info, pid, pError)
+    pError = track_face(drone, info, w,  pid, pError)
     cv2.imshow("Output", img)
     if cv2.waitKey(1) and 0xFF == ord('q'):
         drone.land()
         break
+
+# Maybe not having it as black and gray
+# Better OpenCV library with darker skin

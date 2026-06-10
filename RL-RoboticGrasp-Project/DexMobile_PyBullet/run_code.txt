@@ -1,0 +1,3 @@
+cd ~/DexMobile_PyBullet/DexMobile
+dexmobile\Scripts\activate
+python evaluate.py
